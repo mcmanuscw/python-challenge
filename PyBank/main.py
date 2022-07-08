@@ -18,16 +18,23 @@ with open(file,'r') as text:
 
 
 
-    # Assignment Instructions
+    # Assignment Instructions ref 03-python 12-Stu-CencusZip
 # Your task is to create a Python script that analyzes the records to calculate each of the following values:
+
+# Lists t store data
+NumberOfMonths = []
+NetProfitLoss = []
+GreatestIncrease = []
+GreatestDecrease = []
+
 
 # The total number of months included in the dataset
 # cwmcomments >>>>> month number of the latest (max) date and subtract the month number of the earliest (min) date
 
-DateList = [lines]
 
-print(DateList(1))
 
+
+        
         # The net total amount of "Profit/Losses" over the entire period
 
         # The changes in "Profit/Losses" over the entire period, and then the average of those changes
