@@ -26,7 +26,7 @@ NumberOfMonths = []
 NetProfitLoss = []
 GreatestIncrease = []
 GreatestDecrease = []
-
+functin
 
 # The total number of months included in the dataset
 # cwmcomments >>>>> month number of the latest (max) date and subtract the month number of the earliest (min) date
@@ -42,3 +42,11 @@ GreatestDecrease = []
         # The greatest increase in profits (date and amount) over the entire period
 
         # The greatest decrease in profits (date and amount) over the entire period
+# Stagging
+
+# git add .
+# git commit -m "add_message"
+# git push
+
+# Optional
+# git status
