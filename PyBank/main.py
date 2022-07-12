@@ -1,32 +1,64 @@
-# 05- ins read file as an example for reading a file
+# Dependencies
+import os
+import csv
 
-# Store the file path associated with the file (note the backslash may be os specific)
-file = 'Resources/budget_data.csv'
+from numpy import average, double
 
-# Open the file in "read" mode ('r') and store the contents in the variable "text"
-with open(file,'r') as text:
+csvpath = os.path.join('Resources', 'budget_data.csv')
+
+# Reading using CSV module
+
+# --------------------Initialize Lists-------------
+
+# Initialize List for Investments
+Investments = []
+
+# Initialize Investment Change (Difference List
+diff_list = []
+
+# --------------------------------------------------
+
+with open(csvpath) as csvfile:
+
+    # CSV reader specifies delimiter and variable that holds contents
+    csvreader = csv.reader(csvfile, delimiter=',')
+
     
-    # This stores a reference to a file name
-    print(text)
 
-    # Store all of the text inside a variable called "lines"
-    lines = text.read()
+    # Read the header row first (skip this step if there is now header)
+    csv_header = next(csvreader)
+    #print(f"CSV Header: {csv_header}")
 
-    #print the contents of the  text file
-    print(lines)
+    # # Read each row of data after the header
+    for index, row in enumerate(csvreader):
+        # print(index, row[1]) #Prints element 1 aka first column
+        Investments.append(float(row[1]))
+
+    # print inital list
+    # print(Investments)
+ 
+    for x, y in zip(Investments[0::], Investments[1::]):
+       diff_list.append(y-x) 
+
+    # print difference list
+    #  print(diff_list)
+
+print(average(diff_list))
+print(min(diff_list))
+print(max(diff_list))
+print(len(Investments))
 
 
 
+#     # Assignment Instructions ref 03-python 12-Stu-CencusZip
+# # Your task is to create a Python script that analyzes the records to calculate each of the following values:
 
-    # Assignment Instructions ref 03-python 12-Stu-CencusZip
-# Your task is to create a Python script that analyzes the records to calculate each of the following values:
-
-# Lists t store data
-NumberOfMonths = []
-NetProfitLoss = []
-GreatestIncrease = []
-GreatestDecrease = []
-functin
+# # Lists t store data
+# NumberOfMonths = []
+# NetProfitLoss = []
+# GreatestIncrease = []
+# GreatestDecrease = []
+# functin
 
 # The total number of months included in the dataset
 # cwmcomments >>>>> month number of the latest (max) date and subtract the month number of the earliest (min) date
