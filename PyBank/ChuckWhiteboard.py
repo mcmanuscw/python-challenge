@@ -64,7 +64,7 @@ print(f"Greatest Decrease: (${min(diff_list)})")
 print(f"Greatest Increase in Profits: $({max(diff_list)})")
 
 
-# Write Summary to CSV File
+# Write to CSV File
 # Specify the file to write to
 output_path = os.path.join("analysis", "PyBankSummary.csv")
 
@@ -75,10 +75,10 @@ with open(output_path, 'w') as csvfile:
     csvwriter = csv.writer(csvfile, delimiter=',')
 
     # Write the first row (column headers)
-    csvwriter.writerow(['Financial Analysis', ''])
+    csvwriter.writerow(['Financial Analysis', '', ''])
 
     # Write the second row 
-    csvwriter.writerow(['-----------------------------------', ''])
+    csvwriter.writerow(['-----------------------------------', '', ''])
 
    # Write the rows (column headers)
     csvwriter.writerow(['Total Number of Months:', len(Investments)])
