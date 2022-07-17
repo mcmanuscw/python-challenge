@@ -40,7 +40,7 @@ with open(csvpath) as csvfile:
     # print inital list
     #print(Investments)
  
-    for x, y in zip(Investments[0::], Investments[1::]):
+    for x, y in zip(Investments[0::],   Investments[1::]):
        diff_list.append(y-x) 
 
     # print difference list
@@ -60,8 +60,8 @@ print("")
 print(f"Total # Months: {len(Investments)}")
 print(f"Net Total PnL:  ${sum(Investments)}")
 print(f"Average Change: ${RoundedAverage}")
-print(f"Greatest Decrease: (${min(diff_list)})")
-print(f"Greatest Increase in Profits: $({max(diff_list)})")
+print(f"Greatest Decrease: yy-mmm (${min(diff_list)})")
+print(f"Greatest Increase in Profits: yy-mmm $({max(diff_list)})")
 
 
 # Write Summary to CSV File
