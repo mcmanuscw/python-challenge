@@ -1,73 +1,51 @@
 # Dependencies
-from calendar import c
-from locale import currency
-from optparse import Values
 import os
 import csv
-from typing import Counter
 
-from numpy import average, double, int0
 
 # --------------------------------------------------
-#Variables
+# source data file
+read_csvpath = os.path.join('Resources', 'election_data.csv')
+# outputpath
+write_csvpath = os.path.join('Analysis', 'election_data_analysis.csv')
+
+
+# --------------------------------------------------
+#Candidate Options
 candidate_options = []
-#Declare count for votes as a number
-vote_counter={}
-winning_percentage = 0
-county_votes ={}
+#Candidate vote counter
+candidate_votes = {}
+
+# Winning candidate tracker
+winner = ""
+winner_votes = 0
+
+#Variables
 total_votes =0 
-county_percent=0 
+
+
 
 # --------------------------------------------------
-# Reading using CSV module
-csvpath = os.path.join('Resources', 'election_data.csv')
+# source data file
+read_csvpath = os.path.join('Resources', 'election_data.csv')
+# outputpath
+write_csvpath = os.path.join('Analysis', 'election_data_analysis.csv')
 
-with open(csvpath) as csvfile:
+
+
+with open(read_csvpath) as csvfile:
 
     # CSV reader specifies delimiter and variable that holds contents
-    csvreader = csv.reader(csvfile, delimiter=',')
+    election_data = csv.reader(csvfile)
 
-    # Read the header row first (skip this step if there is now header)
-    csv_header = next(csvreader)
-    print(f"CSV Header: {csv_header}")
-
-    #TotalVotes = (len(csvreader))  
-
-    # # Read each row of data after the header and read them into a list
-    for row in csvreader:
-        total_votes = total_votes +1
-        candidate_name =row[2]
-        if candidate_name not in candidate_options:
-            candidate_options.append(candidate_name)
-            vote_counter[candidate_name] =0
-        vote_counter[candidate_name] += 1
+    # Read the header  (skip this step if there is now header)
+    csv_header = next(election_data)
     
-    
-    #TotalVotes = (len(csvreader))  
-    
-    print(vote_counter)
+    #For reach row
+    for row in election_data:
 
-    for county in county_votes:
-        county_vote = county_vote[county]
-        county_percent = float(county_vote)/ float(total_votes) *100
-    
-    #print("print(county_percent)")
-    print(county_percent)
-    
-    #print(vote_counter[2]) 
-    
-   # print("print(candidate_options)")
-    #print(candidate_options)    
-
-#1 How do I get a distinct list of candidates?
-
-
-
-
-
-
-
-
+        # print("* ", end="")
+        #Add tot he total vote count
 
 
 
